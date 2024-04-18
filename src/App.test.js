@@ -10,3 +10,15 @@ test("Test First React app case", () => {
   expect(text2).toBeInTheDocument();
   expect(title).toBeInTheDocument();
 });
+
+test("Testing input box", () => {
+  render(<App />);
+  const checkInput = screen.getByRole("textbox");
+  const checkInputPlaceholder = screen.getByPlaceholderText("enter username");
+  expect(checkInput).toBeInTheDocument();
+  expect(checkInputPlaceholder).toBeInTheDocument();
+  expect(checkInput).toHaveAttribute("name", "username");
+  expect(checkInput).toHaveAttribute("id", "userId");
+  expect(checkInput).toHaveAttribute("type", "text");
+  expect(checkInput).toHaveAttribute("value", "Vishnu");
+});
