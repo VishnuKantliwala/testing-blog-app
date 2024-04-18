@@ -22,3 +22,43 @@ test("Testing input box", () => {
   expect(checkInput).toHaveAttribute("type", "text");
   expect(checkInput).toHaveAttribute("value", "Vishnu");
 });
+
+describe("UI testcase group", () => {
+  test("test case 1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+});
+
+// describe.only("UI testcase group", () => {
+//   test("test case 1", () => {
+//     render(<App />);
+//     let checkInput = screen.getByRole("textbox");
+//     expect(checkInput).toHaveAttribute("name", "username");
+//   });
+// });
+
+describe.skip("UI testcase group", () => {
+  test("test case 1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+});
+
+describe("UI testcase group", () => {
+  test("test case 1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  describe("Inner describe UI testcase group", () => {
+    test("test case 1", () => {
+      render(<App />);
+      let checkInput = screen.getByRole("textbox");
+      expect(checkInput).toHaveAttribute("name", "username");
+    });
+  });
+});
